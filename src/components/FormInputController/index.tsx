@@ -1,8 +1,8 @@
-'use client';
-import React, { HTMLInputTypeAttribute } from 'react';
-import { Control, Controller, RegisterOptions } from 'react-hook-form';
-import { Input } from '..';
-import { TextFieldProps } from '@mui/material';
+"use client";
+import { TextFieldProps } from "@mui/material";
+import React, { HTMLInputTypeAttribute } from "react";
+import { Control, Controller, RegisterOptions } from "react-hook-form";
+import { Input } from "..";
 
 interface Props {
   name: string;

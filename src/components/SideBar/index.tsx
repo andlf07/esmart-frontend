@@ -1,3 +1,4 @@
+"use client";
 import { Box, Button, Link, Text } from "@/components";
 import { useUserContext } from "@/hooks";
 import React from "react";

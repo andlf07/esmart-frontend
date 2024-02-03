@@ -1,4 +1,5 @@
 "use client";
+import { formatteDateWithHourAndSeconds } from "@/libs/formatteDateWithHourAndSeconds";
 import { Telemetry } from "@/models/Telemetry";
 import React from "react";
 import { Text } from "..";
@@ -22,13 +23,18 @@ const TelemetryCard: React.FC<Props> = ({ telemetryData }) => {
   return (
     <StyledTelemetryCardBox>
       {skipKeys.map((key, index: number) => {
+        let keyValue = telemetryData[key as keyof Telemetry];
+
+        if (key === "timestamp")
+          keyValue = formatteDateWithHourAndSeconds(keyValue);
+
         return (
           <StyledTelemetryCardPropertyBox key={index}>
             <StyledTelemetryCardPropertyText>
               {key}:
             </StyledTelemetryCardPropertyText>
             <Text fontSize="1.25rem" fontWeight="500">
-              {telemetryData[key as keyof Telemetry]}
+              {keyValue}
             </Text>
           </StyledTelemetryCardPropertyBox>
         );

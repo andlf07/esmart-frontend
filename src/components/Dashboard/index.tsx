@@ -1,18 +1,19 @@
 "use client";
-import { useUserContext } from "@/hooks";
+import { useDashboard } from "@/hooks";
 import AddIcon from "@mui/icons-material/Add";
 
 import React from "react";
-import { AddSensorModal, Box, SensorCard, SpeedDial, Text } from "..";
+import { AddSensorModal, SensorCard, SpeedDial, Text } from "..";
+import {
+  StyledDashboardContainer,
+  StyledDashboardSensorBox,
+  StyledDashboardTitle,
+} from "./styles";
 
 interface Props {}
 
 const Dashboard: React.FC<Props> = () => {
-  const { sensors } = useUserContext();
-
-  const [isOpenModal, setIsOpenModal] = React.useState<boolean>(false);
-
-  const handleAddSensorModal = (value: boolean) => setIsOpenModal(value);
+  const { handleAddSensorModal, isOpenModal, sensors } = useDashboard();
 
   const actions = [
     {
@@ -22,17 +23,9 @@ const Dashboard: React.FC<Props> = () => {
   ];
 
   return (
-    <Box width="60%" marginTop="30px" height="100vh">
-      <Text fontSize="2rem" fontWeight="700" alignSelf="center">
-        Dashboard Esmart-Test
-      </Text>
-      <Box
-        padding="30px"
-        direction="row"
-        flexWrap="wrap"
-        gap="20px"
-        width="100%"
-      >
+    <StyledDashboardContainer>
+      <StyledDashboardTitle>Dashboard Esmart-Test</StyledDashboardTitle>
+      <StyledDashboardSensorBox>
         {sensors.length === 0 ? (
           <Text>Aun no tienes sensores registrados.</Text>
         ) : (
@@ -40,13 +33,13 @@ const Dashboard: React.FC<Props> = () => {
             return <SensorCard key={sensor.id} sensorData={sensor} />;
           })
         )}
-      </Box>
+      </StyledDashboardSensorBox>
       <AddSensorModal
         isOpen={isOpenModal}
         handleClose={() => handleAddSensorModal(false)}
       />
       <SpeedDial actions={actions} />
-    </Box>
+    </StyledDashboardContainer>
   );
 };
 

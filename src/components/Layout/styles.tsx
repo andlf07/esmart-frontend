@@ -4,6 +4,6 @@ import { Stack } from "@mui/material";
 export const StyledLayoutMainContainer = styled(({ ...otherProps }) => (
   <Stack {...otherProps} component="main" />
 ))`
-  width: 99%;
-  // height: 95vh;
+  width: 100%;
+  height: 100vh;
 `;

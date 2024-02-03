@@ -32,7 +32,7 @@ const Sensor: React.FC<Props> = () => {
           alignItems="center"
         />
       ) : (
-        <Box width="100%" height="100vh" alignItems="center" padding="30px">
+        <Box width="100%" height="auto" alignItems="center" padding="30px">
           <Box marginTop="30px" width="100%" gap="50px">
             <Box direction="row" gap="20px">
               <Text fontSize="1.5rem" fontWeight="700">

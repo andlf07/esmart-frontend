@@ -1,7 +1,10 @@
 "use client";
+import { useDeleteRule } from "@/hooks";
+import useBulletMenu from "@/hooks/useBulletMenu";
 import { Rules } from "@/models/Rules";
+import { MenuItem } from "@mui/material";
 import React from "react";
-import { Box, Text } from "..";
+import { Box, BulletMenu, Text } from "..";
 import { StyledRuleCardBox, StyledRuleCardPropertyText } from "./styles";
 
 interface Props {
@@ -9,13 +12,26 @@ interface Props {
 }
 
 const RuleCard: React.FC<Props> = ({ rule }) => {
+  const bulletMenuHandlers = useBulletMenu();
+  const { handleDeleteRule } = useDeleteRule();
+
+  const handleOnClickDeleteMenu = () => {
+    handleDeleteRule(rule.id);
+    bulletMenuHandlers.handleClose();
+  };
+
   return (
     <StyledRuleCardBox>
-      <Box direction="row" gap="10px">
-        <StyledRuleCardPropertyText>Nombre:</StyledRuleCardPropertyText>
-        <Text fontSize="1.25rem" fontWeight="500">
-          {rule.fact}
-        </Text>
+      <Box direction="row" justifyContent="space-between">
+        <Box direction="row" gap="10px">
+          <StyledRuleCardPropertyText>Nombre:</StyledRuleCardPropertyText>
+          <Text fontSize="1.25rem" fontWeight="500">
+            {rule.fact}
+          </Text>
+        </Box>
+        <BulletMenu handlers={bulletMenuHandlers}>
+          <MenuItem onClick={handleOnClickDeleteMenu}>Elminar</MenuItem>
+        </BulletMenu>
       </Box>
       <Box direction="row" gap="10px">
         <StyledRuleCardPropertyText>Check key:</StyledRuleCardPropertyText>

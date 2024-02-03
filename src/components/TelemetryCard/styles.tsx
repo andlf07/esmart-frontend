@@ -4,7 +4,7 @@ import { Box, Text } from "..";
 export const StyledTelemetryCardBox = styled(({ ...otherProps }) => (
   <Box {...otherProps} />
 ))`
-  width: 300px;
+  width: 400px;
   height: auto;
   background-color: #fff;
   padding: 10px;
