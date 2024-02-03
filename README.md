@@ -4,7 +4,7 @@ Este proyecto fue realizado para prueba de desarrollo.
 
 Utilizando tecnologias como Nextjs, react-hook-form, Material UI.
 
-Deploy: https://esmart-frontend-11zt5kmr8-andlf07.vercel.app/
+Deploy: https://esmart-frontend.vercel.app/
 
 Permite las acciones:
 
