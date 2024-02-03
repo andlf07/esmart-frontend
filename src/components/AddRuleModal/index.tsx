@@ -87,7 +87,7 @@ const AddRuleModal: React.FC<Props> = ({ sensorId, isOpen, handleClose }) => {
             </Box>
             <Box gap="10px">
               <Box>
-                <Text>Operador:</Text>
+                <Text>Operador: </Text>
                 <InputSelectController
                   control={control}
                   name="operator"
