@@ -32,7 +32,7 @@ const Sensor: React.FC<Props> = () => {
           alignItems="center"
         />
       ) : (
-        <Box width="100%" height="auto" alignItems="center" padding="30px">
+        <Box width="100%" height="100vh" alignItems="center" padding="30px">
           <Box marginTop="30px" width="100%" gap="50px">
             <Box direction="row" gap="20px">
               <Text fontSize="1.5rem" fontWeight="700">
@@ -65,7 +65,13 @@ const Sensor: React.FC<Props> = () => {
               <Text fontSize="1.25rem" fontWeight="700">
                 Telemetry
               </Text>
-              <Box direction="row" gap="20px" flexWrap="wrap">
+              <Box
+                direction="row"
+                gap="20px"
+                flexWrap="wrap"
+                overflow="auto"
+                maxHeight="350px"
+              >
                 {data?.telemetryRecords.length === 0 && (
                   <Text>Aun no tienes telemetry registrada.</Text>
                 )}

@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Emsart-frontend
 
-## Getting Started
+Este proyecto fue realizado para prueba de desarrollo.
 
-First, run the development server:
+Utilizando tecnologias como Nextjs, react-hook-form, Material UI.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Deploy: https://esmart-frontend-11zt5kmr8-andlf07.vercel.app/
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Permite las acciones:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+     1. Crear usuario mediante username.
+     2. Login mediante username.
+     3. Agregar Sensor.
+     4. Eliminar Sensor.
+     5. Agregar Reglas.
+     6. Eliminar Reglas.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Instalacion
 
-## Learn More
+Agregar las variables de entorno:
 
-To learn more about Next.js, take a look at the following resources:
+    NEXT_PUBLIC_USERS_ENDPOINT=
+    NEXT_PUBLIC_SENSORS_ENDPOINT=
+    NEXT_PUBLIC_TELEMETRY_ENDPOINT=
+    NEXT_PUBLIC_USER_RULES_ENDPOINT=
+    NEXT_PUBLIC_LOGIN_ENDPOINT=
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Al clonar el repositorio:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+    npm install
 
-## Deploy on Vercel
+Para desarrollo:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    npm run dev
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Para build:
+
+    npm run build
+
+Para correr el build:
+
+    npm run start
